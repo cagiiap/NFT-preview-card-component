@@ -1,0 +1,181 @@
+/* Author: Carlos de Oliveira, email: carjuniorrj@hotmail.com */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+:root{
+    --main-color: hsl(217, 54%, 11%);
+    --card-color: hsl(216, 50%, 16%);
+    --line-color: hsl(215, 32%, 27%);
+    --white-color: hsl(0, 0%, 100%);
+    --font-color: hsl(215, 51%, 70%);
+    --active-color: hsl(178, 100%, 50%);
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-color);
+}
+
+p{
+    font-size: 18px;
+}
+
+.card{
+    width: 350px;
+    height: 600px;
+    background-color: var(--card-color);
+    border-radius: 15px;
+    box-shadow: 0 0 2em rgba(0, 0, 0, 0.171);
+}
+
+.content{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+    line-height: 26px;
+}
+
+.wrapper{
+    position: relative;
+}
+
+.img-card{
+    width: 300px;
+    height: 300px;
+    background-image: url("images/image-equilibrium.jpg");
+    background-size: cover;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.view{
+    position: absolute;
+    visibility: hidden;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:hsla(178, 100%, 50%, 0.445);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.img-card:hover + .view{
+    visibility: visible;
+}
+
+#title{
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+#title:hover{
+    color: var(--active-color);
+}
+
+#description{
+    font-weight: 300;
+    color: var(--font-color);
+}
+
+.details{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ethereum{
+    display: flex;
+    align-items: center;
+}
+
+#value-ethereum{
+    padding-left: 5px;
+    font-size: 14px;
+    color: var(--active-color);
+}
+
+.time{
+    display: flex;
+    align-items: center;
+}
+
+#time-left{
+    padding-left: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--font-color);
+}
+
+hr{
+    width: 100%;
+    border: 0;
+    border-top: solid 1px var(--line-color);
+}
+
+.user{
+    display: flex;
+    align-items: center;
+}
+
+.user>img{
+    width: 34px;
+    height: 34px;
+    border: solid 1px var(--white-color);
+    border-radius: 100%
+}
+
+#user-details{
+    font-size: 14px;
+    color: var(--font-color);
+    padding-right: 3px;
+    padding-left: 16px;
+}
+
+#current-user{
+    font-size: 14px;
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+#current-user:hover{
+    color: var(--active-color);
+}
+
+@media(max-width: 375px){
+    .card{
+        width: 330px;
+        height: 545px;
+    }
+
+    .img-card{
+        height:280px;
+        width: 280px;
+    }
+
+    #title{
+        font-size: 20px;
+    }
+
+    #description{
+        font-size: 16px;
+    }
+}
